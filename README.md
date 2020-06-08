@@ -2,7 +2,7 @@
 
 ## 事前準備
 
-### Vault server
+#### 1. Vault server
 
 VaultのPKI Secret engineの設定
 - RootCAもしくはIntermediate CAの設定
@@ -15,10 +15,10 @@ VaultのPKI Secret engineの設定
 	- 例：
 		- `VAULT_PKI_ISSUE=pki_int/issue/nginx`
 
-### Root CAもしくはIntermediateのcertをOSもしくはブラウザのキーチェーンに追加（信頼する）
+#### 2. Root CAもしくはIntermediateのcertをOSもしくはブラウザのキーチェーンに追加（信頼する）
 
 
-### セットアップ用のトークン
+#### 3.  セットアップ用のトークン
 
 Vault addressとRoot tokenなど十分な権限を持つVault tokenをスクリプトに設定
 
@@ -27,11 +27,11 @@ VAULT_ADDR=https://vault.masa:8200
 VAULT_TOKEN=root
 ```
 
-### Dockerがインストールされていること
+#### 4. Dockerがインストールされていること
 
 もし、Docker実行に`sudo`権限が必要な場合、スクリプト内のDocker実行の際に`sudo`で実行する。
 
-### NginxサーバーのFQDNが名前解決できること
+#### 5. NginxサーバーのFQDNが名前解決できること
 
 `/etc/hosts`などに追加
 ```
