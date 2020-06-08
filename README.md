@@ -7,10 +7,16 @@
 VaultのPKI Secret engineの設定
 - RootCAもしくはIntermediate CAの設定
 - 例：
-	- vault secret enable pki   # Root CA
-	- vault secret enable -path=pki_int pki # Intermediate CA
+	- `vault secret enable pki   # Root CA`
+	- `vault secret enable -path=pki_int pki   # Intermediate CA`
 - 証明書を`issue`できる設定
 	- 参考：[Build your own certificate authority](https://learn.hashicorp.com/vault/secrets-management/sm-pki-engine)
+- RoleのDomain設定は以下のいずれかを指定
+	- `allow_any_name=true`
+	- `allowd_domains=<NGINX_FQDN>`
+- Roleには`generate_lease=true`を設定
+	- 例：
+		- `vault write pki_int/roles/nginx allow_any_name=true max_ttl=24h generate_lease=true`
 - そのSecret engineのMount pathとRoleをスクリプトで設定
 	- 例：
 		- `VAULT_PKI_ISSUE=pki_int/issue/nginx`
