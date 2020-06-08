@@ -1,13 +1,16 @@
 #!/bin/bash
 
+# Vault address andn token
+VAULT_ADDR=https://vault.masa:8200
+VAULT_TOKEN=root
+VAULT_PKI_ISSUE=pki_int/issue/masatomo_ito
+
 # Configuration variables
 WORK_DIR=$PWD
 CONSUL_TEMPLATE_DIR=${WORK_DIR}/consul-template.d
 VAULT_AGENT_DIR=${WORK_DIR}/vault-agent.d
 TEMPLATE_DIR=${WORK_DIR}/template
 CERT_DIR=${WORK_DIR}/cert
-VAULT_ADDR=https://localhost:8200
-VAULT_PKI_ISSUE=pki_int/issue/masatomo_ito
 NGINX_FQDN=nginx.vault.masa
 NGINX_DOCKER_NAME=nginx_pki
 
@@ -106,7 +109,7 @@ auto_auth {
 }
 
 vault {
-  address = "${VAULT_ADDR}"
+  address = "${DEMO_VAULT_ADDR}"
 }
 
 template {
