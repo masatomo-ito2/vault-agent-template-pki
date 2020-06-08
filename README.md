@@ -40,7 +40,7 @@ echo 127.0.0.1 nginx.vault.masa >> /etc/hosts
 
 ## Demoの実行
 
-1. スクリプトを実行
+### 1. スクリプトを実行
 
 ```
 ./run_demo.sh
@@ -50,7 +50,7 @@ echo 127.0.0.1 nginx.vault.masa >> /etc/hosts
 Vault agentが実行されたシェルが表示される。
 問題なければ１０秒おきに新しい証明書がRenderingされる。
 
-2. ブラウザから確認
+### 2. ブラウザから確認
 
 ブラウザを開き、`https://<NGINX_FQDN>`　へアクセスする。
 正しい証明書がサーバーに設定され、Secureなアクセスができることを確認。
